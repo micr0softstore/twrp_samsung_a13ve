@@ -9,16 +9,17 @@
 /vbmeta             emmc         /dev/block/bootdevice/by-name/vbmeta            flags=backup=1;display="Vbmeta Image"
 
 # Dynamic Partitions
-/system         f2fs                /dev/block/mapper/system                                    flags=backup=1;display="System";logical;
-/system         ext4                /dev/block/mapper/system                                    flags=backup=1;display="System";logical;
-/system         erofs               /dev/block/mapper/system                                    flags=backup=1;display="System";logical;
-/system_image   emmc                /dev/block/mapper/system                                    flags=backup=1;display="System Image";flashimg=1;wipeingui;
-/vendor         f2fs                /dev/block/mapper/vendor                                    flags=backup=1;display="Vendor";logical;
-/vendor_image   emmc                /dev/block/mapper/vendor                                    flags=backup=1;display="Vendor Image";flashimg=1;wipeingui;
-/odm            f2fs                /dev/block/mapper/odm                                       flags=backup=1;display="ODM";logical;
-/odm_image      emmc                /dev/block/mapper/odm                                       flags=backup=1;display="ODM Image";flashimg=1;wipeingui;
-/product        f2fs                /dev/block/mapper/product                                   flags=backup=1;display="Product";logical
-/product_image  emmc                /dev/block/mapper/product                                   flags=backup=1;display="Product Image";flashimg=1;wipeingui;
+/system         f2fs                /dev/block/mapper/system                                    flags=backup=1;display="System";logical;wipeingui;
+/system         ext4                /dev/block/mapper/system                                    flags=backup=1;display="System";logical;wipeingui;
+/system         erofs               /dev/block/mapper/system                                    flags=backup=1;display="System";logical;wipeingui;
+/system_image   emmc                /dev/block/mapper/system                                    flags=backup=0;display="System Image";flashimg=1;
+/vendor         f2fs                /dev/block/mapper/vendor                                    flags=backup=1;display="Vendor";logical;wipeingui;
+/vendor         ext4                /dev/block/mapper/vendor                                    flags=backup=1;display="Vendor";logical;wipeingui;
+/vendor_image   emmc                /dev/block/mapper/vendor                                    flags=backup=0;display="Vendor Image";flashimg=1;
+/odm            f2fs                /dev/block/mapper/odm                                       flags=backup=1;display="ODM";logical;wipeingui;
+/odm_image      emmc                /dev/block/mapper/odm                                       flags=backup=0;display="ODM Image";flashimg=1;
+/product        f2fs                /dev/block/mapper/product                                   flags=backup=1;display="Product";logical;wipeingui;
+/product_image  emmc                /dev/block/mapper/product                                   flags=backup=0;display="Product Image";flashimg=1;
 
 # FOTA
 /modem			emmc		/dev/block/by-name/apnhlos							flags=backup=1;display="Modem"
